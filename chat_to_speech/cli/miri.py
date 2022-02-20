@@ -1,5 +1,15 @@
 import click
 from chat_to_speech.core.html_parsing import get_html, parse_html_miri_conversations
+from chat_to_speech.core.tts import tts
+
+
+PERSON_TO_VOICE = {
+    "Narrator": "Guy",
+    "Yudkowsky": "Christopher",
+    "Ngo": "Brandon",
+    "Soares": "Liam",
+    "Other": "Jacob",
+}
 
 
 @click.command()
@@ -12,3 +22,8 @@ def miri(url):
     """
     data = get_html(url)
     utts = parse_html_miri_conversations(data)
+
+    # Run TTS
+    for utt in utts:
+        voice = PERSON_TO_VOICE[utt.speaker]
+        tts(text=utt.text, voice=voice)
