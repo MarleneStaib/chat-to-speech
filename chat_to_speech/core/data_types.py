@@ -11,7 +11,7 @@ class Utterance:
 @attr.s
 class TTSVoice:
     name = attr.ib(type=str)
-    accent = attr.ib(type=str)
+    language = attr.ib(type=str)
     style = attr.ib(type=str, default=None)
     default_speech_rate = attr.ib(type=str, default=None)
     description = attr.ib(type=str, default=None)
@@ -23,34 +23,34 @@ class TTSVoice:
 AZURE_VOICES = {
     "Guy": TTSVoice(
         name="en-US-GuyNeural",
-        accent="en-US",
+        language="en-US",
         style="newscast",
         default_speech_rate="10%",
         description="Good presenter/narrator voice",
     ),
     "Christopher": TTSVoice(
         name="en-US-ChristopherNeural",
-        accent="en-US",
+        language="en-US",
         description="Voice for main male speaker 1.",
     ),
     "Brandon": TTSVoice(
         name="en-US-BrandonNeural",
-        accent="en-US",
+        language="en-US",
         description="Voice for main male speaker 2.",
     ),
     "Liam": TTSVoice(
         name="en-CA-LiamNeural",
-        accent="en-CA",
+        language="en-CA",
         description="Voice for main male speaker 3.",
     ),
     "Jacob": TTSVoice(
         name="en-US-JacobNeural",
-        accent="en-US",
+        language="en-US",
         description="Voice for less often used speakers.",
     ),
     "Eric": TTSVoice(
         name="en-US-EricNeural",
-        accent="en-US",
+        language="en-US",
         description="Very similar to main speaker 1 - backup voice.",
     ),
 }

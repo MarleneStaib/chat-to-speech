@@ -5,6 +5,8 @@ INSTALL_REQUIRES = [
     "bs4>=0.0.1",
     "click>=7.1.2",
     "requests>=2.27.1",
+    "python-dotenv>=0.19.2",
+    "azure-cognitiveservices-speech>=1.20.0",
 ]
 
 

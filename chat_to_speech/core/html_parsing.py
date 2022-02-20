@@ -27,6 +27,7 @@ def parse_text_for_tts(text):
     """
     # Strip bad symbols
     text = re.sub(r"\xa0", "", text)
+    text = re.sub(" ?-> ?", " to ", text)
 
     # Punctuating paragraphs
     def punctuate(paragraph):
@@ -38,7 +39,7 @@ def parse_text_for_tts(text):
     paragraphs = [p.strip() for p in paragraphs]
     paragraphs = [p for p in paragraphs if p]
     paragraphs = [punctuate(p) for p in paragraphs]
-    text = " <break> ".join(paragraphs)
+    text = " ".join(paragraphs)
 
     # Reading out quotes
     def read_quotes(text):
