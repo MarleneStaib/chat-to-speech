@@ -1,8 +1,10 @@
 from setuptools import find_packages, setup
 
 INSTALL_REQUIRES = [
-    "bs4==0.0.1"
-    "click==7.1.2",
+    "attrs>=21.4.0",
+    "bs4>=0.0.1",
+    "click>=7.1.2",
+    "requests>=2.27.1",
 ]
 
 
@@ -15,7 +17,7 @@ config = {
     "packages": find_packages(include=["chat_to_speech", "chat_to_speech.*"]),
     "install_requires": INSTALL_REQUIRES,
     "entry_points": {
-        "console_scripts": ["chat-to-speech=chat_to_speech.cli.main:main"],
+        "console_scripts": ["chat-to-speech=chat_to_speech.cli.main:cli"],
     },
 }
 

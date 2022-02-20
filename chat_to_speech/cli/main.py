@@ -1,22 +1,19 @@
 # pylint: disable=missing-function-docstring
 
 import click
+from chat_to_speech.cli.miri import miri
+
 
 @click.group()
 def cli():
+    """
+    HTML conversations TTS CLI.
+    """
     pass
 
 
-def miri():
-    pass
-
-
-cli.add_command(miri)
-
-
-def main():
-    return cli()
+cli.add_command(miri, "miri")
 
 
 if __name__ == "__main__":
-    main()
+    cli()
