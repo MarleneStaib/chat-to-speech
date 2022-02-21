@@ -1,8 +1,7 @@
 from dotenv import dotenv_values
 import azure.cognitiveservices.speech as speechsdk
 
-from chat_to_speech.core.data_types import AZURE_VOICES
-from chat_to_speech.core.auth import get_token
+from chat_to_speech.core.voice_config import AZURE_VOICES
 
 
 AZURE_SUBSCRIPTION_KEY = dotenv_values(".env")["AZURE_SUBSCRIPTION_KEY"]
